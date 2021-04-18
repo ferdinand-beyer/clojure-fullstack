@@ -1,0 +1,11 @@
+build/
+node_modules/
+resources/public/js/
+
+.calva/
+.clj-kondo/.cache/
+.cpcache/
+.lsp/
+.shadow-cljs/
+.nrepl-port
+.rebel_readline_history

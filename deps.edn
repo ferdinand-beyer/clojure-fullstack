@@ -1,0 +1,25 @@
+{:deps
+ {mount/mount {:mvn/version "0.1.16"}
+  
+  io.pedestal/pedestal.service  {:mvn/version "0.5.8"}
+  io.pedestal/pedestal.route    {:mvn/version "0.5.8"}
+  io.pedestal/pedestal.immutant {:mvn/version "0.5.7"}
+  
+  hiccup/hiccup {:mvn/version "1.0.5"}
+  
+  com.taoensso/sente {:mvn/version "1.16.2"}}
+ 
+ :paths ["src" "resources"]
+ 
+ :aliases
+ {:dev
+  {:extra-paths ["dev" "test"]
+   :extra-deps
+   {org.clojure/tools.namespace {:mvn/version "1.1.0"}
+
+    ;; Build
+    thheller/shadow-cljs {:mvn/version "2.12.5"}
+
+    ;; Frontend
+    re-frame/re-frame {:mvn/version "1.2.0"}
+    day8.re-frame/http-fx {:mvn/version "0.2.3"}}}}}
