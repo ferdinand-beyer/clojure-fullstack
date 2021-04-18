@@ -7,6 +7,8 @@
    (page/html5
     {:lang "en"}
     [:head
+     [:meta {:name "csrf"
+             :content (:io.pedestal.http.csrf/anti-forgery-token req)}]
      [:title "Hello, world!"]]
     [:body
      [:div#app]

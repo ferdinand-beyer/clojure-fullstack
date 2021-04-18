@@ -9,8 +9,8 @@
             [taoensso.sente  :as sente :refer (cb-success?)]))
 
 (def ?csrf-token
-  (when-let [el (.querySelector js/document "html")]
-    (.getAttribute el "data-csrf")))
+  (when-let [el (.querySelector js/document "meta[name=csrf]")]
+    (.-content el)))
 
 (let [{:keys [chsk ch-recv send-fn state]}
       (sente/make-channel-socket-client!
@@ -40,5 +40,4 @@
 
 (defn ^:export init! []
   (enable-console-print!)
-  (println "Token: " ?csrf-token)
   (render!))

@@ -4,6 +4,7 @@
             [mount.core :as mount]
 
             [backend.pages]
+            [backend.session :refer [session-options]]
             [backend.websockets :as ws]))
 
 (defn hello-world [_]
@@ -20,13 +21,15 @@
   {::http/routes routes
    ::http/resource-path "/public"
 
+   ::http/enable-session session-options
+   ::http/enable-csrf true
+
    ;; TODO: Verify this
    ::http/secure-headers
    {:content-security-policy-settings {:object-src "none"}}
 
    ::http/type :immutant
    ::http/container-options {:context-configurator ws/configure}
-   ::http/join? false
    ::http/port 8080})
 
 (mount/defstate server
