@@ -3,7 +3,7 @@
   
   io.pedestal/pedestal.service  {:mvn/version "0.5.8"}
   io.pedestal/pedestal.route    {:mvn/version "0.5.8"}
-  io.pedestal/pedestal.immutant {:mvn/version "0.5.7"}
+  io.pedestal/pedestal.immutant {:mvn/version "0.5.8"}
   
   hiccup/hiccup {:mvn/version "1.0.5"}
   
